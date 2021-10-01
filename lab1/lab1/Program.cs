@@ -6,7 +6,7 @@ namespace lab1
     {
         static void Main()
         {
-            string ceva = "ana are mere";
+            var ceva = "ana are mere";
             int numberOfWords=ceva.GetNumberOfWords();
             Console.WriteLine(numberOfWords);
             
