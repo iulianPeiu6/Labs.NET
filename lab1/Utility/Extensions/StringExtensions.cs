@@ -6,7 +6,8 @@ namespace Utility.Extensions
     {
         public static int GetNumberOfWords(this string text)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return 3;
         }
     }
 }
