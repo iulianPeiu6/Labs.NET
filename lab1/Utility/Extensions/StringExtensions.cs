@@ -7,7 +7,15 @@ namespace Utility.Extensions
         public static int GetNumberOfWords(this string text)
         {
             //throw new NotImplementedException();
-            return 3;
+            string[] words = text.Split(' ');
+            int count = 0;
+            foreach (var word in words)
+            {
+                count++;
+            }
+
+            return count;
+
         }
     }
 }

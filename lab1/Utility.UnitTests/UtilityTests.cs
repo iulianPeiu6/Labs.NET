@@ -16,10 +16,12 @@ namespace Utility.UnitTests
         public void Given_AString_When_GetNumberOfWordsIsCalled_Then_ReturnsNumberOfWords()
         {
             // arrange
-            var expectedNumberOfWords = 3;
+            var expectedNumberOfWords = 4;
             // act
             var actualNumberOfWords = text.GetNumberOfWords();
             // assert
+
+            Assert.AreEqual(expectedNumberOfWords,actualNumberOfWords);
 
         }
     }
