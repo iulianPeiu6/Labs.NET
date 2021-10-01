@@ -1,12 +1,12 @@
 ﻿using System;
+using Utility.Extensions;
 
-namespace lab1
+namespace TestConsole
 {
     class Program
     {
         static void Main()
         {
-            
         }
     }
 }
