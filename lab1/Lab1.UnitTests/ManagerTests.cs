@@ -1,17 +1,17 @@
 ﻿using NUnit.Framework;
 using System;
-using Models;
 
 namespace Models.UnitTests
 {
     public class ManagerTests
     {
-        private Manager defaultManagerDataTest;
+        private Manager defaultValidManagerDataTest;
+        private Manager defaultInvalidManagerDataTest;
 
         [SetUp]
         public void Setup()
         {
-            defaultManagerDataTest = new Manager
+            defaultValidManagerDataTest = new Manager
             {
                 Id = Guid.NewGuid(),
                 FirstName = "Roxana",
@@ -20,8 +20,15 @@ namespace Models.UnitTests
                 EndDate = new DateTime(2021, 10, 15),
                 Salary = 1300
             };
+            defaultInvalidManagerDataTest = new Manager
+            {
+                Id = Guid.NewGuid(),
+                LastName = "",
+                StartDate = new DateTime(2020, 10, 15),
+                Salary = 1300
+            };
 
-            Assert.IsNotNull(defaultManagerDataTest);
+            Assert.IsNotNull(defaultValidManagerDataTest);
         }
 
         [Test]
@@ -29,17 +36,42 @@ namespace Models.UnitTests
         {
             var expectedFullName = "Roxana Timon";
 
-            var actualFullName = defaultManagerDataTest.GetFullName();
+            var actualFullName = defaultValidManagerDataTest.GetFullName();
 
             Assert.AreEqual(expectedFullName, actualFullName);
         }
 
         [Test]
+        public void Given_AnInvalidArchitect_When_GetFullNameIsCalled_Then_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(
+                () => defaultInvalidManagerDataTest.GetFullName());
+        }
+
+        [Test]
         public void Given_AnActiveManager_When_IsActiveIsCalled_Then_ReturnTrue()
         {
-            var isActive = defaultManagerDataTest.IsActive();
+            var isActive = defaultValidManagerDataTest.IsActive();
 
             Assert.IsTrue(isActive);
+        }
+
+        [Test]
+        public void Given_AnInactiveManager_When_IsActiveIsCalled_Then_ReturnFalse()
+        {
+            var manager = new Manager
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "Roxana",
+                LastName = "Timon",
+                StartDate = new DateTime(2012, 10, 15),
+                EndDate = new DateTime(2013, 10, 15),
+                Salary = 1300
+            };
+
+            var isActive = manager.IsActive();
+
+            Assert.IsFalse(isActive);
         }
 
         [Test]
@@ -47,9 +79,16 @@ namespace Models.UnitTests
         {
             var expectedSalutation = $"Hello Manager Roxana Timon";
 
-            var actualSalutation = defaultManagerDataTest.Salutation();
+            var actualSalutation = defaultValidManagerDataTest.Salutation();
 
             Assert.AreEqual(expectedSalutation, actualSalutation);
+        }
+
+        [Test]
+        public void Given_AnInvalidManager_When_SalutationIsCalled_Then_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(
+                () => defaultInvalidManagerDataTest.Salutation());
         }
     }
 }
