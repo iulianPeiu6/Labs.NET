@@ -1,4 +1,5 @@
 ﻿using System;
+using Vanguard;
 
 namespace Models.Abstracts
 {
@@ -18,11 +19,16 @@ namespace Models.Abstracts
 
         public string GetFullName()
         {
+            Guard.ArgumentNotNullOrEmpty(FirstName, nameof(FirstName));
+            Guard.ArgumentNotNullOrEmpty(LastName, nameof(LastName));
+
             return $"{ FirstName } { LastName }";
         }
 
         public bool IsActive()
         {
+            Guard.ArgumentNotNull(EndDate, nameof(EndDate));
+
             if (EndDate > DateTime.Now)
                 return true;
             return false;
