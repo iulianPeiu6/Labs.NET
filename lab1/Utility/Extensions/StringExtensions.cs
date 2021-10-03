@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Utility.Extensions
 {
@@ -6,7 +7,12 @@ namespace Utility.Extensions
     {
         public static int GetNumberOfWords(this string text)
         {
-            throw new NotImplementedException();
+            var separators = new char[] { ' ', '.', ',', '!', '?' };
+            var words = text.Split(separators);
+            words = words.ToList()
+                .Where(word => word != string.Empty)
+                .ToArray();
+            return words.Length;
         }
     }
 }
