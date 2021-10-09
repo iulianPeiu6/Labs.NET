@@ -43,7 +43,7 @@ namespace DataProcessor
 
         private FootballData.Models.FootballData MapLineToRecord(string line)
         {
-            var properties = line.Split((char[]) null, StringSplitOptions.RemoveEmptyEntries);
+            var properties = line.Split(new char[]{ ',' ,'\n'}, StringSplitOptions.RemoveEmptyEntries);
 
             for (int j = 0; j < properties.Length; j++)
             {
@@ -58,8 +58,22 @@ namespace DataProcessor
                 return null; 
             }
 
-            if(properties[FootballDataDefaultMapper.Team]=="")
+            var record = new FootballData.Models.FootballData
+            {
+                Team = properties[FootballDataDefaultMapper.Team_Index],
 
+                P = int.Parse(properties[FootballDataDefaultMapper.P_Index]),
+                W = int.Parse(properties[FootballDataDefaultMapper.W_Index]),
+                L = int.Parse(properties[FootballDataDefaultMapper.L_Index]),
+                D = int.Parse(properties[FootballDataDefaultMapper.D_Index]),
+                F = int.Parse(properties[FootballDataDefaultMapper.P_Index]),
+                A = int.Parse(properties[FootballDataDefaultMapper.A_Index]),
+
+
+
+            };
+
+            return record;
 
         }
 
