@@ -37,5 +37,26 @@ namespace TestConsole
              Console.WriteLine(recordWithSmallestTemperatureSpread);
             */
         }
+      
+
+        public static void RunFootballDataProcessorTest()
+        {
+
+            var testFootballFile = @"..\..\..\..\..\DataTest\football.dat";
+
+            var football_processor = new FootballDataProcessor();
+            
+            var records = football_processor.ReadRecords(testFootballFile);
+            
+            var football_records = football_processor.ReadRecords(testFootballFile);
+            
+            foreach (var record in football_records)
+            {
+                Console.WriteLine($"{ record }");
+            }
+
+            Console.WriteLine("Am ajuns aici");
+
+        }
     }
 }
