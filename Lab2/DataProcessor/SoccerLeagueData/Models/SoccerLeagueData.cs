@@ -17,10 +17,8 @@ namespace DataProcessor.Models
         public int A { get; set; }
         public int Pts { get; set; }
 
-
         public override string ToString()
         {
-
             var elements = GetType().GetProperties().ToList().Select(property => property.GetValue(this));
 
             var toStringResult = string.Join(",", elements);

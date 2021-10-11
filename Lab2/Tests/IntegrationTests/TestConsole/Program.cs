@@ -29,7 +29,6 @@ namespace TestConsole
 
         public static void RunSoccerLeagueDataProcessorTest()
         {
-
             var testFootballFile = @"..\..\..\..\..\DataTest\football.dat";
 
             var soccer_league_processor = new SoccerLeagueDataProcessor();
@@ -45,7 +44,6 @@ namespace TestConsole
 
             var recordWithSmallestDifferenceBetweenGoals = soccer_league_processor.GetRecordWithSmallestDifferenceForAgainstGoals(records);
             Console.WriteLine(recordWithSmallestDifferenceBetweenGoals);
-
         }
     }
 }
