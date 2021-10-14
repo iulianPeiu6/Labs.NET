@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Data.Models;
+using System.Collections.Generic;
 using System.Linq;
 using Vanguard;
-using Data.Models;
 
 namespace Data
 {

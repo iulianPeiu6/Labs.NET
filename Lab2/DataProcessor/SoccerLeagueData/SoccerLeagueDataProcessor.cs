@@ -12,7 +12,7 @@ namespace Data
             Guard.ArgumentNotNullOrEmpty(records, nameof(records));
 
             var result = records.FirstOrDefault();
-            var smallestDifferenceForAgainstGoals= result.F - result.A;
+            var smallestDifferenceForAgainstGoals = result.F - result.A;
 
             foreach (var record in records)
             {
