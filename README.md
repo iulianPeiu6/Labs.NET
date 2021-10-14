@@ -17,10 +17,11 @@ Initial approach (bad code):
 - Duplicated code, Redundancy - Hard to maintain  
   At first, we did not apply the Law of Demeter as we should: Read & Process Records were in the same class. So we refactor it to have two classes that handle Read, respectively Process independently. Having duplicated code in the first version, refactoring was two times time-consuming due to changes in both Weather Data & Soccer League Table.
 - Easier to write code in this way , but not smarter  
-- Takes more time to read due to duplications. Haha  
+- Harder to test. Multiple tests are required to cover all the duplicated code resulting duplicated tests  
 
 The Second approach (good code):  
 - Sometimes requires a high time investment and additional knowledge (e.g. in our case reflection, generic programming)  
-- Sometimes is harder to read and understand due to generalization  
-- The coupling level grows  
+- Sometimes is harder to read and understand due to generalization (generic programming, reflection)  
+- In some cases the coupling level grows  
 - Easier to maintain - change only the common code and not every instance of that code where it appears  
+- Easier to test 
