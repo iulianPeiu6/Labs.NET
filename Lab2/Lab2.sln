@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B7FA7FE4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{435C4C5D-2F33-4CAB-B56C-E1B26C174521}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProcessor", "DataProcessor\DataProcessor.csproj", "{EA3F5D91-B651-4137-A79D-BCA8A46C9602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "DataProcessor\Data.csproj", "{EA3F5D91-B651-4137-A79D-BCA8A46C9602}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTest", "DataTest", "{7BB8878A-2B8E-4BC6-B280-3A4A947416C4}"
 	ProjectSection(SolutionItems) = preProject

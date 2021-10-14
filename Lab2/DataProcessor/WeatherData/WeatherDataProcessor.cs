@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Vanguard;
-using DataProcessor.Models;
+using Data.Models;
 
-namespace DataProcessor
+namespace Data
 {
     public class WeatherDataProcessor
     {

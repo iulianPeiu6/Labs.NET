@@ -1,5 +1,5 @@
 ﻿using System;
-using DataProcessor;
+using Data;
 
 namespace TestConsole
 {

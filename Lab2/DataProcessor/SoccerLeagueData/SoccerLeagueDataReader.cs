@@ -1,11 +1,11 @@
-﻿using DataProcessor.Mappings;
-using DataProcessor.Models;
+﻿using Data.Mappings;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace DataProcessor
+namespace Data
 {
     public class SoccerLeagueDataReader
     {

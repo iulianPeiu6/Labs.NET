@@ -1,9 +1,9 @@
-﻿using DataProcessor.Models;
+﻿using Data.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Vanguard;
 
-namespace DataProcessor
+namespace Data
 {
     public class SoccerLeagueDataProcessor
     {

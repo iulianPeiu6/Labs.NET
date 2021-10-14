@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace DataProcessor.Models
+namespace Data.Models
 {
     public class WeatherData
     {
