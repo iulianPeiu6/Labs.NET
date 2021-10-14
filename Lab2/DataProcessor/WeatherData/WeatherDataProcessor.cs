@@ -1,4 +1,5 @@
 ﻿using Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vanguard;
@@ -16,7 +17,7 @@ namespace Data
 
             foreach (var record in records)
             {
-                var temperatureSpread = record.MxR - record.MnT;
+                var temperatureSpread = Math.Abs(record.MxR - record.MnT);
                 if (temperatureSpread < smallestTemperatureSpreed)
                 {
                     smallestTemperatureSpreed = temperatureSpread;

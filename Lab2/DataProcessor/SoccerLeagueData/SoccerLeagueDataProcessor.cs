@@ -1,4 +1,5 @@
 using Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vanguard;
@@ -16,7 +17,7 @@ namespace Data
 
             foreach (var record in records)
             {
-                var smallestDifferenceGoals = record.F - record.A;
+                var smallestDifferenceGoals = Math.Abs(record.F - record.A);
                 if (smallestDifferenceGoals < smallestDifferenceForAgainstGoals)
                 {
                     smallestDifferenceForAgainstGoals = smallestDifferenceGoals;
