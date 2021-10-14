@@ -1,4 +1,4 @@
-﻿using Data_v2;
+using Data_v2;
 using System;
 
 namespace TestConsole
@@ -42,6 +42,7 @@ namespace TestConsole
             }
 
             var recordWithSmallestDifferenceBetweenGoals = soccerLeagueProcessor.GetRecordWithSmallestDifferenceForAgainstGoals(records);
+
             Console.WriteLine(recordWithSmallestDifferenceBetweenGoals);
         }
     }

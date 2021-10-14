@@ -1,4 +1,4 @@
-﻿namespace Data.Mappings
+namespace Data.Mappings
 {
     public class SoccerLeagueDataDefaultMapper
     {
