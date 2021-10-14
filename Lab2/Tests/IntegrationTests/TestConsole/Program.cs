@@ -1,5 +1,5 @@
-﻿using System;
-using DataProcessor;
+using Data_v2;
+using System;
 
 namespace TestConsole
 {
@@ -10,13 +10,13 @@ namespace TestConsole
             RunWeatherDataProcessorTest();
             RunSoccerLeagueDataProcessorTest();
         }
-
         public static void RunWeatherDataProcessorTest()
         {
             var testFile = @"..\..\..\..\..\DataTest\weather.dat";
 
             var processor = new WeatherDataProcessor();
-            var records = processor.ReadRecords(testFile);
+            var reader = new WeatherDataReader();
+            var records = reader.ReadRecords(testFile);
 
             foreach (var record in records)
             {
@@ -31,18 +31,18 @@ namespace TestConsole
         {
             var testFootballFile = @"..\..\..\..\..\DataTest\football.dat";
 
-            var soccer_league_processor = new SoccerLeagueDataProcessor();
+            var soccerLeagueProcessor = new SoccerLeagueDataProcessor();
+            var soccerLeagueReader = new SoccerLeagueDataReader();
 
-            var records = soccer_league_processor.ReadRecords(testFootballFile);
+            var records = soccerLeagueReader.ReadRecords(testFootballFile);
 
-            var soccer_league_records = soccer_league_processor.ReadRecords(testFootballFile);
-
-            foreach (var record in soccer_league_records)
+            foreach (var record in records)
             {
                 Console.WriteLine($"{ record }");
             }
 
-            var recordWithSmallestDifferenceBetweenGoals = soccer_league_processor.GetRecordWithSmallestDifferenceForAgainstGoals(records);
+            var recordWithSmallestDifferenceBetweenGoals = soccerLeagueProcessor.GetRecordWithSmallestDifferenceForAgainstGoals(records);
+
             Console.WriteLine(recordWithSmallestDifferenceBetweenGoals);
         }
     }

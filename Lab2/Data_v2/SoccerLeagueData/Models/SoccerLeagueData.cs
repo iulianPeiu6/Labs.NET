@@ -1,6 +1,6 @@
-using System.Linq;
+﻿using System.Linq;
 
-namespace Data.Models
+namespace Data_v2.Models
 {
     public class SoccerLeagueData
     {

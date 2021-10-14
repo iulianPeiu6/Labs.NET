@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\DataProcessor\DataProcessor.csproj" />
+    <ProjectReference Include="..\..\..\DataProcessor\Data.csproj" />
+    <ProjectReference Include="..\..\..\Data_v2\Data_v2.csproj" />
   </ItemGroup>
 
 </Project>

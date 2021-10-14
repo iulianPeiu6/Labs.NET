@@ -1,4 +1,4 @@
-﻿namespace Data.Mappings
+﻿namespace Data_v2.Mappings
 {
     public class WeatherDataDefaultMapper
     {
