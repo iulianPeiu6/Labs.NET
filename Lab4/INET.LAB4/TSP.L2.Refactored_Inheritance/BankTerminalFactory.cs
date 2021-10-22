@@ -3,7 +3,7 @@ using INET.Lab4.Models;
 using System;
 using System.Collections.Generic;
 
-namespace INET.Lab4.Factories
+namespace INET.Lab4
 {
     public class BankTerminalFactory
     {
